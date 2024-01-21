@@ -1,8 +1,10 @@
 
 // props-properties rendered on <Book /> call.
 // destructing on multiple ways.
-const Book = ({book:{img,title,author}}) => {
-  // const {img,title,author} =props.book;
+// '{book:{img,title,author}}'
+
+const Book = (probs) => {
+  const {img,title,author} =probs;
   return (
     <article className="book-column">
       <img src={img} alt="book"/>

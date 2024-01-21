@@ -45,11 +45,12 @@ h1{
     font-weight: bold;
 }
 #author{
+    font-size: 0.8rem;
     color: #575151;
     margin: 0;
     text-align: center;
 }
-#stock{
+#stockinfo{
     color: #dd5f5f;
 }
 @media screen and (max-width:800px){

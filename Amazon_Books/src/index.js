@@ -4,13 +4,17 @@ import Book from './book';
 import './style.css';
 import books from './list';
 
+const Booklist=()=>{
+   return books.map((books)=>{
+            {/*Using spread operator*/}
+            return <Book {...books} key={books.id}/>
+            });
+}
+
 function Bestsales(){
     return <section className="book-shelf">
     { /* Accessing item from the array of books using map*/ }
-        {books.map((books)=>{
-            {/*Passing complete list component as probs*/}
-          return <Book book={books} key={books.id}/>
-        })}
+        <Booklist />
     </section>
 }
 
