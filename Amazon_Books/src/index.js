@@ -8,9 +8,8 @@ function Bestsales(){
     return <section className="book-shelf">
     { /* Accessing item from the array of books using map*/ }
         {books.map((books)=>{
-            const {img,title,author}=books;
-            {/*Passing destructed map items to the book component as props*/}
-          return <Book img={img} title={title} author={author}/>
+            {/*Passing complete list component as probs*/}
+          return <Book book={books} key={books.id}/>
         })}
     </section>
 }
