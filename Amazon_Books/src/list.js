@@ -20,7 +20,8 @@ const books =[
     img:'./image/ikigai.jpg',
     title :"Ikigai",
     author:" Francesc Miralles & Hector Garcia",
-    id:3
+    id:3,
+    stock:"Out of Stock"
 }
 ];
 
