@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Book from './book';
+import Book from './Book';
 import './style.css';
-import books from './list';
+import {books} from './books';
 
 const Booklist=()=>{
+    
+    const getbook=(id)=>{
+      const book =  books.find((books)=>books.id===id);
+      alert(`${book.title} by ${book.author}`)
+    }
    return books.map((books)=>{
             {/*Using spread operator*/}
-            return <Book {...books} key={books.id}/>
+            return <Book {...books} key={books.id} getbook={getbook}/>
             });
 }
 

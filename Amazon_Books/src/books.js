@@ -1,5 +1,5 @@
 // Creating array of booklist.
-const books =[
+export const books =[
     {
     img:'./image/atomichabits.jpg',
     title :"Atomic-Habits",
@@ -24,5 +24,3 @@ const books =[
     stock:"Out of Stock"
 }
 ];
-
-export default books;
