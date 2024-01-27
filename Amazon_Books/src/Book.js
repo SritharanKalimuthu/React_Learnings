@@ -1,7 +1,5 @@
 
 // props-properties rendered on <Book /> call.
-// destructing on multiple ways.
-// '{book:{img,title,author}}'
 
 const Book = (props) => {
   const {img,title,author,stock,number} =props;
@@ -15,7 +13,7 @@ const Book = (props) => {
       <p id="title">{title}</p>
       <p id="author">{author}</p>
       <p id="stockinfo">{stock}</p>
-      <span id="Rank">#{number+1}</span>
+      <span id="number">#{number+1}</span>
       {/* <button onClick={()=>{getbook(id)}}>click</button>
       <button onClick={getbookname}>click</button> */}
     </article>

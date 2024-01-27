@@ -72,11 +72,11 @@ h1{
     font-weight: 600;
 }
 
-#Rank{
+#number{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #cf3d3d;
+    background-color: #c35600;
     font-weight:700;
     padding: 15px;
     border-radius: 0.5rem 0rem;
