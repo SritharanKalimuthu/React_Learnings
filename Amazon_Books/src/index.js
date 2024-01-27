@@ -6,13 +6,13 @@ import {books} from './books';
 
 const Booklist=()=>{
     
-    const getbook=(id)=>{
-      const book =  books.find((books)=>books.id===id);
-      alert(`${book.title} by ${book.author}`)
-    }
-   return books.map((books)=>{
+    // const getbook=(id)=>{
+    //   const book =  books.find((books)=>books.id===id);
+    //   alert(`${book.title} by ${book.author}`)
+    // }
+   return books.map((books,index)=>{
             {/*Using spread operator*/}
-            return <Book {...books} key={books.id} getbook={getbook}/>
+            return <Book {...books} key={books.id} number={index}/>
             });
 }
 

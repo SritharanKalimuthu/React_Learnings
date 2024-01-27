@@ -15,6 +15,7 @@ h1{
 
 .book-shelf{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
     row-gap: 2rem;
@@ -33,11 +34,8 @@ h1{
     align-items: center;
     justify-content: center;
     box-shadow: 4px 4px 10px 2px #6d6767;
-    transition: ease 400ms,transform 400ms;
-}
+    position: relative;
 
-.book-column:hover{
-    transform: scale(1.05);
 }
 
 .book-column img{
@@ -46,13 +44,13 @@ h1{
     border: 1px solid #000;
 }
 
-.book-column button{
+/* .book-column button{
     padding:5px 10px;
     background-color: powderblue;
     border: none;
     border-radius: 5px;
     box-shadow: 2px 2px 10px gray;
-}
+} */
 #title{
     margin: 1;
     text-align: center;
@@ -73,12 +71,13 @@ h1{
     font-size: .8rem;
     font-weight: 600;
 }
-@media screen and (max-width:950px){
-    .book-shelf{
-        margin:0 5rem;
-        flex-wrap: wrap;
-    }
-    .book-column{
-        width: 18rem;
-    }
+
+#Rank{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #cf3d3d;
+    font-weight:700;
+    padding: 15px;
+    border-radius: 0.5rem 0rem;
 }
