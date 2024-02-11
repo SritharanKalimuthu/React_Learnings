@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Righteous', sans-serif;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title{
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.qr-img{
+  margin: 1rem 1rem 2rem;
+  padding: 1rem;
+  box-shadow:0 0 2rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+.input-label{
+  display: block;
+  padding: 5px;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+input[type="text"]{
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 10px;
+  border: 2px solid #454140;
+  border-radius: 5px;
+}
+
+input[type="text"]::placeholder{
+  color: #6e6a699c;
+}
+
+
+button{
+  font-weight: 100;
+  padding: 10px 15px;
+  margin:1rem 1rem 2rem 0;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: 2px 2px 10px#000;
+  cursor: pointer;
+}
+
+.generate-btn{
+  background-color:  #87bdd8;
+}
+
+.download-btn{
+  background-color: #46a38a;
+}
