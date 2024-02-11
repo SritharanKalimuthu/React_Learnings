@@ -11,13 +11,14 @@ function App() {
   }
 
   function generatecode(){
+    const {data,size} = dataobject;
     try{
       if(dataobject.data === ''){
         setImage('')
         setError('Enter data to get QR code !!!');
       }else{
         setError('');
-        const code = `https://api.qrserver.com/v1/create-qr-code/?size=${dataobject.size}x${dataobject.size}&data=${encodeURIComponent(dataobject.data)}`;
+        const code = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(data)}`;
         setImage(code);
       }
     }catch(error){
