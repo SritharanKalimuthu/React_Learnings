@@ -14,6 +14,7 @@
 }
 
 .title{
+  color: #3a1e07;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -29,7 +30,13 @@
   border-radius: 1rem;
 }
 
+.error-message{
+  margin: 1rem 0;
+  color: #a73b3b;
+}
+
 .input-label{
+  color: #3a1e07;
   display: block;
   padding: 5px;
   font-size: 1rem;
