@@ -7,22 +7,25 @@ function App() {
   const [error,setError] = useState('');
 
   const handleinput = (e)=>{
+    setImage('');
     setDataobject({...dataobject,[e.target.name]:e.target.value});
   }
 
-  function generatecode(){
+  async function generatecode(){
     const {data,size} = dataobject;
     try{
-      if(dataobject.data === ''){
+      if(data === ''){
         setImage('')
         setError('Enter data to get QR code !!!');
       }else{
         setError('');
-        const code = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(data)}`;
-        setImage(code);
+        const response = await fetch(`https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(data)}`)
+        .then((response)=>response.status===200&&setImage(response.url));
       }
     }catch(error){
-      console.log('Error while generating QR code',error)
+      setImage('')
+      setError('Error while generating QR code..! Please Try Again Later!!!')
+      console.log(error);
     }
   }
 
