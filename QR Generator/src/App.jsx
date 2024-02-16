@@ -4,14 +4,15 @@ import './App.css'
 function App() {
   const [image,setImage] = useState('');
   const [dataobject,setDataobject] = useState({data:'',size:150});
+  const [loader,setLoader]=useState(false);
   const [error,setError] = useState('');
 
   const handleinput = (e)=>{
-    setImage('');
     setDataobject({...dataobject,[e.target.name]:e.target.value});
   }
 
   async function generatecode(){
+    setImage('')
     const {data,size} = dataobject;
     try{
       if(data === ''){
@@ -19,34 +20,44 @@ function App() {
         setError('Enter data to get QR code !!!');
       }else{
         setError('');
-        const response = await fetch(`https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(data)}`)
-        .then((response)=>response.status===200&&setImage(response.url));
+        setLoader(true);
+        fetch(`https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(data)}`)
+        .then((response)=>{
+          if(response.status===200){
+            setLoader(false);
+            setImage(response.url)
+          }
+        }
+          )
       }
     }catch(error){
       setImage('')
+      setLoader(true);
       setError('Error while generating QR code..! Please Try Again Later!!!')
       console.log(error);
     }
   }
 
   function downloadcode(){
-    fetch(image)
-    .then((response)=>response.blob())
-    .then((blob)=>{
-      const link = document.createElement("a");
-      link.href =URL.createObjectURL(blob);
-      link.download="qrcode.png";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    })
-
+    if(image){
+        fetch(image)
+        .then((response)=>response.blob())
+        .then((blob)=>{
+          const link = document.createElement("a");
+          link.href =URL.createObjectURL(blob);
+          link.download="qrcode.png";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        })
+    }
   }
 
   return (
     <>
     <section className='container'>
       <h1 className='title'>qr generator</h1>
+      {loader && <p className='loading-message'>Please wait while Loading your QR code ...</p>}
       {image && <img src={image} className='qr-img'/>}
       <p className='error-message'>{error}</p>
       <section>

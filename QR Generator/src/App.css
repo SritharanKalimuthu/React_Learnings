@@ -30,6 +30,12 @@
   border-radius: 1rem;
 }
 
+.loading-message{
+  font-size:1.2rem;
+  margin: 1rem 0;
+  color: #1f8546;
+}
+
 .error-message{
   margin: 1rem 0;
   color: #a73b3b;
