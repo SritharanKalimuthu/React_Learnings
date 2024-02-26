@@ -1,9 +1,13 @@
-import { useState,useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
+// import for background video.
 import video from './assets/Images/bg.mp4'
 
 function App() {
-  const Apikey = `ee46f080eb4a7f83bf9d0ecbd17c9951`;
+//Enter API key from openweather.
+  const Apikey = ``;
+
+// usestate components to maintain states across weather container.
   const [weather,setWeather] = useState(false)
   const [loader,setLoader] = useState(false) 
   const [error,setError] =  useState({display:false,error_message:''})
@@ -17,12 +21,13 @@ function App() {
   const [windspeed,setWindspeed] = useState(0)
 
 
-
+// onchange event function to handle input changes.
   const handleInput = (e) => {
       let input = e.target.value;
       setCity(input);
   }
 
+// Asynchronous function to fetch weather from openweather.org.
   async function getWeatherData(e) {
       e.preventDefault();
       setError({...error,display:false,error_message:''})
@@ -71,8 +76,7 @@ function App() {
       }
         
   }
-
-
+// React weather component.
   return (
         <main>
             <video autoPlay muted loop>
