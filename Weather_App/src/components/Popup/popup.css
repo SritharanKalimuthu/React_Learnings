@@ -1,0 +1,122 @@
+     
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeIn 0.3s ease-out;
+          }
+  
+          .popup-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+          }
+  
+          .popup-header {
+            margin-bottom: 30px;
+          }
+  
+          .location-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            color: white;
+            animation: iconPulse 2s ease-in-out infinite;
+          }
+  
+          .popup-header h2 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+  
+          .popup-content p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+          }
+  
+          .benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+          }
+  
+          .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #555;
+          }
+  
+          .benefit-icon {
+            font-size: 18px;
+          }
+  
+          .popup-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+          }
+  
+          .btn-allow, .btn-deny {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+          }
+  
+          .btn-allow {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+          }
+  
+          .btn-allow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+          }
+  
+          .btn-deny {
+            background: rgba(255, 255, 255, 0.8);
+            color: #666;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+          }
+  
+          .btn-deny:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-1px);
+          }
